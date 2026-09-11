@@ -269,7 +269,6 @@ import torch
 
 def split_qkv_into_heads(q, k, v, num_heads):
     # TODO: split each of q, k, v into (B, num_heads, L, d_k) and return as a tuple
-    # qkv -> B, L, d_m -> B, L, n_h, d_m//n_h -> B, n_h, L, d_k
     res = []
     for i in [q, k, v]:
         temp = split_last_dim_into_heads(i, num_heads)
