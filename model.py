@@ -253,7 +253,7 @@ def apply_linear_projection(x, weight, bias):
     # TODO: return x @ weight^T + bias (bias may be None) with shape (..., out_features)
     if bias is None:
         return (x @ weight.transpose(-1, -2))
-    return (x @ weight.permute(1, 0)) + b
+    return (x @ weight.permute(1, 0)) + bias
 
 # Step 27 - project_to_query_key_value (not yet solved)
 # TODO: implement
